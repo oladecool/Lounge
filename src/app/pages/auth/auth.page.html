@@ -1,0 +1,85 @@
+<ion-header>
+  <ion-toolbar [class.show-background]="showToolbar">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title slot="secondary">{{ isLogin ? 'Login' : 'Signup' }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+ <ion-content class="stable-bg ion-padding" scroll="false">
+  
+<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+ <ion-grid> 
+    <ion-row>
+      <ion-col size-sm="6" offset-sm="3">
+        <ion-list>
+          <ion-item>
+            <ion-label position="floating" class="item-input relative">E-mail</ion-label>
+            <ion-input 
+              type="email" 
+              ngModel 
+              name="email"
+              placeholder="Email"
+              required
+              email
+              #emailCtrl="ngModel"
+             ></ion-input>
+          </ion-item>
+          <ion-item *ngIf="!emailCtrl.valid && emailCtrl.touched" lines="none">
+            <ion-label>Should be a valid email address</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label class="item item-input no-margin relative" position="floating">Password </ion-label>
+            <ion-input 
+              type="password" 
+              ngModel 
+              name="password"
+              required
+              password
+              minlength="6" 
+              #passwordCtrl="ngModel"
+            ></ion-input>
+          </ion-item>
+          <ion-item *ngIf="!passwordCtrl.valid && passwordCtrl.touched" lines="none">
+             <ion-label>Should atleast be 6 characters Long </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size-sm="6" offset-sm="3">
+      <ion-button 
+        type="button" 
+        color="primary" 
+        fill="clear" 
+        expand="block"
+        (click)="onSwitchAuthMode()">
+        Switch to {{ isLogin ? 'Signup' : 'Login' }}
+      </ion-button>
+        <ion-button
+          type="submit"
+          color="primary"
+          (click)="onLogin()"
+          expand="block"
+          [disabled]="!f.valid"
+        >
+          Login
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid> 
+  <!-- <div class="list sign-form">
+    <label class="item item-input no-margin relative">
+      <input type="text" placeholder="Email" ng-model="user.email" />
+      <i ng-show="error=='email'" class="icon icon-error assertive"></i>
+    </label>
+    <label class="item item-input no-margin relative">
+      <input type="password" placeholder="Password" ng-model="user.password" />
+      <i ng-show="error=='password'" class="icon icon-error assertive"></i>
+    </label>
+  </div> -->
+</form>
+  
+</ion-content> 
+
