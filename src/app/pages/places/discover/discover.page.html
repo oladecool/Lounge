@@ -13,25 +13,7 @@
     <ion-segment-button value="all" checked>All Places</ion-segment-button>
     <ion-segment-button value="bookable">Bookable Places</ion-segment-button>
   </ion-segment>
-  <ion-grid>
-    <ion-row no-padding>
-      <ion-col no-padding>
-        <ion-item class="itemSlider">
-          <ion-button type="submit" fill="clear" color="light" class="swiper-button-prev swiper-button-white prevBtn"
-            (click)="prevSlide()"></ion-button>
-          <ion-slides pager="true" class="slides" #IonSlides loop="true">
-            <ion-slide class="slide" no-padding>
-              <div class="sliderImg">
-                <img src="" alt="Slide Images" class="img">
-              </div>
-            </ion-slide>
-          </ion-slides>
-          <ion-button type="submit" fill="clear" color="light" class="swiper-button-next swiper-button-white nextBtn"
-            (click)="nextSlide()"></ion-button>
-        </ion-item>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  
   <ion-grid *ngIf="!relevantPlaces || relevantPlaces.length <= 0">
     <ion-row>
       <ion-col size="12" size-sm="8" offset-sm="2" class="ion-text-center">
