@@ -1,23 +1,32 @@
+<div *ngIf="showSplash" class="splash">
+  <div class="sk-chase">
+    <div class="sk-chase-dot"></div>
+    <div class="sk-chase-dot"></div>
+    <div class="sk-chase-dot"></div>
+    <div class="sk-chase-dot"></div>
+    <div class="sk-chase-dot"></div>
+    <div class="sk-chase-dot"></div>
+  </div>
+</div>
+
 <ion-app>
-     <ion-menu side="start">
-      <ion-header>
-          <ion-toolbar color="primary">
-            <ion-title>
-              TheLounge
-            </ion-title>
-          </ion-toolbar>
+  <ion-menu side="start">
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>
+          TheLounge
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
 
-      </ion-header>
-
-      <ion-content>
-        
-        <ion-list>
-          <ion-menu-toggle>
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle>
           <ion-item lines="none" routerLink="/places/tabs/discover">
             <ion-icon name="business" slot="start"></ion-icon>
             <ion-label>Discover Places</ion-label>
           </ion-item>
-          </ion-menu-toggle>
+        </ion-menu-toggle>
         <ion-menu-toggle>
           <ion-item lines="none" routerLink="/bookings">
             <ion-icon name="checkbox-outline" slot="start"></ion-icon>
@@ -30,9 +39,9 @@
             <ion-label>Logout</ion-label>
           </ion-item>
         </ion-menu-toggle>
-        </ion-list>
-      </ion-content>
-    </ion-menu> 
-    
-    <ion-router-outlet main></ion-router-outlet>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <ion-router-outlet main></ion-router-outlet>
 </ion-app>
