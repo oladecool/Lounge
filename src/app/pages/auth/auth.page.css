@@ -1,11 +1,9 @@
 ion-toolbar {
   --background: transparent;
-  // --ion-color-base: transparent !important;
-   position: absolute; 
+  position: absolute;
 }
 
 Ion-content {
-  // --background: url('../../../assets/img/room.jpeg') 52% center/cover no-repeat;
   background-position: center;
   background-size: contain;
   background-image: cover;
@@ -16,5 +14,4 @@ Ion-content {
 ion-grid {
   margin-top: 7rem;
 }
-
-
+/*# sourceMappingURL=auth.page.css.map */
